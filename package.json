@@ -1,0 +1,19 @@
+{
+  "name": "email-controller",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmaty/email-controller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsmaty/email-controller/issues"
+  },
+  "homepage": "https://github.com/itsmaty/email-controller#readme",
+  "description": ""
+}
