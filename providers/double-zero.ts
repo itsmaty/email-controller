@@ -2,20 +2,26 @@ import { EmailProvider, IProviderConfig } from "../classes/provider";
 import { IEmail } from "../classes/email";
 
 interface IDoubleZeroConfig extends IProviderConfig {
-  endpoint: string;
-  apikey: string;
+    endpoint: string;
+    apikey: string;
 }
 
-class DoubleZeroProvider extends EmailProvider
+interface IDoubleZeroReturn
+{
+
+}
+
+export class DoubleZeroProvider extends EmailProvider
 {
 
     constructor(config: IDoubleZeroConfig)
     {
-        super(config)
+        super(config);
     }
 
-    SendEmail(email: IEmail): void
+    public async SendEmail(email: IEmail): Promise<IDoubleZeroReturnData> // return success or error
     {
-        this.config.apikey
+        // this.config.apikey
+        // TODO implement sending logic
     }
 }
