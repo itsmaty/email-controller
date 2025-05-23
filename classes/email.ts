@@ -48,49 +48,56 @@ export class EMail implements IEmail
         this.provider = provider;
     }
 
-    public HtmlBody(html: string): void
+    public HtmlBody(html: string): EMail
     {
         this.html = html;
+        return this;
     }
 
-    public MarkdownBody(markdown: string): void
-    {
+    public MarkdownBody(markdown: string): EMail {
         this.markdown = markdown;
+        return this;
     }
 
-    public Subject(subject: string)
+    public Subject(subject: string): EMail
     {
-        this,subject = subject;
+        this.subject = subject;
+        return this;
     }
 
-    public From(from: string): void
+    public From(from: string): EMail
     {
         this.from = from;
+        return this;
     }
 
-    public CC(cc: string): void
-    {
+    public CC(cc: string): EMail {
         this.cc = cc;
+        return this;
     }
 
-    public ReplyTo(reply_to: string): void
+    public ReplyTo(reply_to: string): EMail
     {
         this.replyTo = reply_to;
+        return this;
     }
 
-    public SetHeader(header: string, value: string): void
+    public SetHeader(header: string, value: string): EMail
     {
-        this.headers.push({header: header, value: value})
+        this.headers.push({ header, value });
+        return this;
     }
 
-    public SetProviderOption(option: string, value: string): void
+    public SetProviderOption(option: string, value: string): EMail
     {
-        this.providerOptions.push({key: option, value: value})
+        this.providerOptions.push({ key: option, value });
+        return this;
     }
 
-    public AddAttachment(filename: string, content: string, content_type): void
+    public AddAttachment(filename: string, content: string, content_type: string): EMail
     {
-        this.attachments.push({filename: filename, content: content, contentType: content_type})
+        this.attachments.push({ filename, content, contentType: content_type });
+        return this;
     }
 
     public Send(recipeints: string | string[]): void
